@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         heroDirection = (hero.transform.position - transform.position);
         heroDistance = heroDirection.magnitude;
 
-        if(heroDistance > keepDistanceRadias)
+        if (heroDistance > keepDistanceRadias)
         {
             speed = defaultSpeed;
             whetherHeroStop = false;
@@ -52,27 +52,27 @@ public class EnemyMovement : MonoBehaviour
     /* 设定动画状态机 */
     private void AnimationSetter()
     {
-        if(whetherHeroStop)
+        if (whetherHeroStop)
         {
             animator.SetLayerWeight(1, 0);
             EnemyFacingDirection();
-            //print("standstill");
+            print("standstill");
         }
         else
         {
             animator.SetLayerWeight(1, 1);
             EnemyFacingDirection();
-            //print("fllow");
+            print("fllow");
         }
     }
-    
+
     /* 得到敌人的面向位置并且发送给动画状态机 */
     private void EnemyFacingDirection()
     {
         /* 这里的设定优先度是 x轴方向，会优先选择 左右移动动画 */
-        if(heroDirection.y > 0)
+        if (heroDirection.y > 0)
         {
-            if(heroDirection.x > 0)
+            if (heroDirection.x > 0)
             {
                 facingDir = Facing.right;
             }
