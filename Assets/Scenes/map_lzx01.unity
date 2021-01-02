@@ -174,7 +174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 60
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -337,7 +337,7 @@ MonoBehaviour:
   endColor: {r: 0.14978638, g: 0.18838678, b: 0.6226415, a: 1}
   generatorPoint: {fileID: 2046072411}
   xOffset: 18
-  yOffset: 9
+  yOffset: 10
   roomLayer:
     serializedVersion: 2
     m_Bits: 256
