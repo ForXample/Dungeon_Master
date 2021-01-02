@@ -329,11 +329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44c16ba6e3b9ec4cbd0c5d2c6c04a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 0
   roomPrefab: {fileID: 5406540319804270600, guid: 9f0a60566f2da5e4682840edf4cb1f18,
     type: 3}
   roomNumber: 10
   startColor: {r: 0.4339623, g: 0.16171236, b: 0.16171236, a: 1}
   endColor: {r: 0.14978638, g: 0.18838678, b: 0.6226415, a: 1}
-  generatorPoint: {fileID: 0}
+  generatorPoint: {fileID: 2046072411}
   xOffset: 0
   yOffset: 0
+  rooms: []

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
-    public enum Direction { up, down, left, right };
+    public enum Direction { up, down, left, right }
     public Direction direction;
 
     [Header("Room Information")]
@@ -17,12 +17,13 @@ public class RoomGenerator : MonoBehaviour
     public Transform generatorPoint;
     public float xOffset;
     public float yOffset;
+
     public List<GameObject> rooms = new List<GameObject>();
 
 
     void Start()
     {
-        for (int = 0; i < roomNumber, int++)
+        for (int i = 0; i < roomNumber; i++)
         {
             rooms.Add(Instantiate(roomPrefab, transform.position, Quaternion.identity));
             ChangePointPosition();
