@@ -52,7 +52,7 @@ public class HeroMovement : MonoBehaviour
         else // hero 站立不动
         {
             animator.SetLayerWeight(1, 0);
-            print("standstill");
+            //print("standstill");
         }
         // 设置位移， can replace rb.position to transform.position
         rb.MovePosition(rb.position + inputMovement * speed * Time.fixedDeltaTime); 
