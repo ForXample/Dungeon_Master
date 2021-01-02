@@ -336,6 +336,6 @@ MonoBehaviour:
   startColor: {r: 0.4339623, g: 0.16171236, b: 0.16171236, a: 1}
   endColor: {r: 0.14978638, g: 0.18838678, b: 0.6226415, a: 1}
   generatorPoint: {fileID: 2046072411}
-  xOffset: 0
-  yOffset: 0
+  xOffset: 18
+  yOffset: 9
   rooms: []

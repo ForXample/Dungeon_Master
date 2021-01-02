@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class RoomGenerator : MonoBehaviour
@@ -17,6 +18,7 @@ public class RoomGenerator : MonoBehaviour
     public Transform generatorPoint;
     public float xOffset;
     public float yOffset;
+    public LayerMask roomLayer;
 
     public List<GameObject> rooms = new List<GameObject>();
 
@@ -25,7 +27,7 @@ public class RoomGenerator : MonoBehaviour
     {
         for (int i = 0; i < roomNumber; i++)
         {
-            rooms.Add(Instantiate(roomPrefab, transform.position, Quaternion.identity));
+            rooms.Add(Instantiate(roomPrefab, generatorPoint.position, Quaternion.identity));
             ChangePointPosition();
         }
 
@@ -34,27 +36,33 @@ public class RoomGenerator : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void ChangePointPosition()
     {
-        direction = (Direction)Random.Range(0,4);
-
-        switch(direction)
+        do
         {
-            case Direction.up:
-                generatorPoint.position += new Vector3 (0, yOffset, 0);
-                break;
-            case Direction.down:
-                generatorPoint.position += new Vector3 (0, -yOffset, 0);
-                break;
-            case Direction.left:
-                generatorPoint.position += new Vector3 (-xOffset, 0, 0);
-                break;
-            case Direction.right:
-                generatorPoint.position += new Vector3 (xOffset, 0, 0);
-                break;
-        }
+            direction = (Direction)Random.Range(0,4);
+
+            switch(direction)
+            {
+                case Direction.up:
+                    generatorPoint.position += new Vector3 (0, yOffset, 0);
+                    break;
+                case Direction.down:
+                    generatorPoint.position += new Vector3 (0, -yOffset, 0);
+                    break;
+                case Direction.left:
+                    generatorPoint.position += new Vector3 (-xOffset, 0, 0);
+                    break;
+                case Direction.right:
+                    generatorPoint.position += new Vector3 (xOffset, 0, 0);
+                    break;
+            }
+        } while (Physics2D.OverlapCircle(generatorPoint.position, 0.2f, roomLayer));
     }
 }
