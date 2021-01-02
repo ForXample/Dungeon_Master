@@ -77,6 +77,8 @@
     <Compile Include="Assets\Reference\scripts\TestEnmeyShooting.cs" />
     <Compile Include="Assets\Reference\scripts\TestSpell.cs" />
     <Compile Include="Assets\Reference\scripts\testProjectile.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
