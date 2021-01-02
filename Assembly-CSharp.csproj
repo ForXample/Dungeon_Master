@@ -36,6 +36,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Reference\scripts\CamaraFolloHero.cs" />
+     <Compile Include="Assets\Reference\scripts\CoinPickUp.cs" />
+     <Compile Include="Assets\Reference\scripts\Enemy.cs" />
+     <Compile Include="Assets\Reference\scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Reference\scripts\EnmeyAttack.cs" />
+     <Compile Include="Assets\Reference\scripts\FlyToPlayer.cs" />
+     <Compile Include="Assets\Reference\scripts\MainMenu.cs" />
+     <Compile Include="Assets\Reference\scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Reference\scripts\PlayerStatus.cs" />
+     <Compile Include="Assets\Reference\scripts\TestEnemyProjectile.cs" />
+     <Compile Include="Assets\Reference\scripts\TestEnmeyShooting.cs" />
+     <Compile Include="Assets\Reference\scripts\TestSpell.cs" />
+     <Compile Include="Assets\Reference\scripts\testProjectile.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
+     <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
      <Compile Include="Assets\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\RoomGenerator.cs" />
     <Reference Include="UnityEngine">
