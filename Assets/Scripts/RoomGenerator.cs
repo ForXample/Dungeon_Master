@@ -13,23 +13,47 @@ public class RoomGenerator : MonoBehaviour
     public GameObject roomPrefab;
     public int roomNumber;
     public Color startColor, endColor;
+    private GameObject endRoom;
 
     [Header("Position Controller")]
     public Transform generatorPoint;
     public float xOffset;
     public float yOffset;
     public LayerMask roomLayer;
+    public int maxStep;
 
-    public List<GameObject> rooms = new List<GameObject>();
+    public List<Room> rooms = new List<Room>();
+    List<GameObject> farRooms = new List<GameObject>();
+    List<GameObject> nearRooms = new List<GameObject>();
+    List<GameObject> oneWayRooms = new List<GameObject>();
+
 
 
     void Start()
     {
         for (int i = 0; i < roomNumber; i++)
         {
-            rooms.Add(Instantiate(roomPrefab, generatorPoint.position, Quaternion.identity));
+            rooms.Add(Instantiate(roomPrefab, generatorPoint.position, Quaternion.identity).GetComponent<Room>());
             ChangePointPosition();
         }
+
+        rooms[0].GetComponent<SpriteRenderer>().color = startColor;
+
+        endRoom = rooms[0].gameObject;
+        
+        foreach (var room in rooms)
+        {
+            //if (room.transform.position.sqrMagnitude > endRoom.transform.position.sqrMagnitude)
+            //{
+            //    endRoom = room.gameObject;
+            //}
+            SetupRoom(room, room.transform.position);
+
+        } 
+        FindEndRoom();
+        
+        endRoom.GetComponent<SpriteRenderer>().color = endColor;
+        
 
     }
 
@@ -64,5 +88,56 @@ public class RoomGenerator : MonoBehaviour
                     break;
             }
         } while (Physics2D.OverlapCircle(generatorPoint.position, 0.2f, roomLayer));
+    }
+
+    public void SetupRoom(Room newRoom, Vector3 roomPosition)
+    {
+        newRoom.roomUp = Physics2D.OverlapCircle(roomPosition + new Vector3(0, yOffset, 0), 0.2f, roomLayer);
+        newRoom.roomDown = Physics2D.OverlapCircle(roomPosition + new Vector3(0, -yOffset, 0), 0.2f, roomLayer);
+        newRoom.roomLeft = Physics2D.OverlapCircle(roomPosition + new Vector3(-xOffset, 0, 0), 0.2f, roomLayer);
+        newRoom.roomRight = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0, 0), 0.2f, roomLayer);
+
+        newRoom.UpdateRoom();
+    }
+
+    public void FindEndRoom()
+    {
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            if (rooms[i].stepToStart > maxStep)
+            {
+                maxStep = rooms[i].stepToStart;
+            }
+        }
+
+        foreach (var room in rooms)
+        {
+            if(room.stepToStart == maxStep)
+                farRooms.Add(room.gameObject);
+            if(room.stepToStart == maxStep - 1)
+                nearRooms.Add(room.gameObject);
+        }
+
+        for (int i = 0; i < farRooms.Count; i++)
+        {
+            if (farRooms[i].GetComponent<Room>().doorNumber == 1)
+                oneWayRooms.Add(farRooms[i]);
+        }
+        for (int i = 0; i < nearRooms.Count; i++)
+        {
+            if (nearRooms[i].GetComponent<Room>().doorNumber == 1)
+                oneWayRooms.Add(nearRooms[i]);
+        }
+
+        if (oneWayRooms.Count != 0)
+        {
+            endRoom = oneWayRooms [Random.Range(0, oneWayRooms.Count)];
+        }
+
+        else
+        {
+            endRoom = farRooms [Random.Range(0, farRooms.Count)];
+        }
+
     }
 }

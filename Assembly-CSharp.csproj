@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\RoomGenerator.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/123/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
