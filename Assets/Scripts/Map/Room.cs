@@ -15,7 +15,7 @@ public class Room : MonoBehaviour
     void Start()
     {
         doorLeft.SetActive(roomLeft);
-        doorRight.SetActive(roomRight);    
+        doorRight.SetActive(roomRight);
         doorUp.SetActive(roomUp);
         doorDown.SetActive(roomDown);
     }
@@ -23,7 +23,7 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     public void UpdateRoom()
     {
-        stepToStart = (int)(Mathf.Abs(transform.position.x/18) + Mathf.Abs(transform.position.y/9));
+        stepToStart = (int)(Mathf.Abs(transform.position.x / 18) + Mathf.Abs(transform.position.y / 9));
 
         text.text = stepToStart.ToString();
 
