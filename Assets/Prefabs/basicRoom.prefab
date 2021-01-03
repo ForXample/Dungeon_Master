@@ -478,8 +478,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 447155455
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1602141735546293391, guid: 90916b2141528ef47bf878c709648e26,
     type: 3}
@@ -538,7 +538,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 8}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &6023070787919040232
 MonoBehaviour:
@@ -549,20 +549,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 5406540319804270600}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: fa523c27107da6741980d7b158b3f895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+=======
+  m_Script: {fileID: 11500000, guid: 2eb0ab45b35d3e046a0aa0f0004d2037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> dev_LZX_local
   doorLeft: {fileID: 1427193145}
   doorRight: {fileID: 1790622706}
   doorUp: {fileID: 6055205582531497299}
   doorDown: {fileID: 346516047}
+<<<<<<< HEAD
 =======
   doorLeft: {fileID: 0}
   doorRight: {fileID: 0}
   doorUp: {fileID: 0}
   doorDown: {fileID: 0}
 >>>>>>> master
+=======
+>>>>>>> dev_LZX_local
   roomLeft: 0
   roomRight: 0
   roomUp: 0
@@ -571,10 +580,14 @@ MonoBehaviour:
   stepToStart: 0
   doorNumber: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &6055205582531497299
 =======
 --- !u!1 &5472481179368019466
 >>>>>>> master
+=======
+--- !u!1 &6055205582531497299
+>>>>>>> dev_LZX_local
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

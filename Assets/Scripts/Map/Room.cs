@@ -23,11 +23,8 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     public void UpdateRoom(float xOffset, float yOffset)
     {
-<<<<<<< HEAD
-        stepToStart = (int)(Mathf.Abs(transform.position.x/ xOffset) + Mathf.Abs(transform.position.y/ yOffset));
-=======
-        stepToStart = (int)(Mathf.Abs(transform.position.x / 18) + Mathf.Abs(transform.position.y / 9));
->>>>>>> master
+
+        stepToStart = (int)(Mathf.Abs(transform.position.x / xOffset) + Mathf.Abs(transform.position.y / yOffset));
 
         text.text = stepToStart.ToString();
 
