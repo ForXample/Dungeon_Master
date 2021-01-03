@@ -81,7 +81,6 @@
     <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
     <Compile Include="Assets\Scripts\Map\Room.cs" />
-    <Compile Include="Assets\Scripts\Map\RoomGenerator.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/123/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
