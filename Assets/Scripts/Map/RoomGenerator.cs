@@ -99,7 +99,7 @@ public class RoomGenerator : MonoBehaviour
         newRoom.roomRight = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0, 0), 0.2f, roomLayer);
 
 <<<<<<< HEAD
-        newRoom.UpdateRoom( xOffset, yOffset);
+        newRoom.UpdateRoom(xOffset, yOffset);
 =======
         newRoom.UpdateRoom(xOffset, yOffset);
 >>>>>>> dev_LZX_local
