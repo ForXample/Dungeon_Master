@@ -64,6 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\EnemySwordStatus.cs" />
+>>>>>>> dev_MF_Local
     <Compile Include="Assets\Reference\scripts\CamaraFolloHero.cs" />
     <Compile Include="Assets\Reference\scripts\CoinPickUp.cs" />
     <Compile Include="Assets\Reference\scripts\Enemy.cs" />
@@ -78,8 +82,15 @@
     <Compile Include="Assets\Reference\scripts\TestSpell.cs" />
     <Compile Include="Assets\Reference\scripts\testProjectile.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement1.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
+=======
+    <Compile Include="Assets\Scripts\Enemy\EnemyStatus.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
+    <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
+    <Compile Include="Assets\Scripts\Hero\HeroStatus.cs" />
+>>>>>>> dev_MF_Local
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7191948749352825090}
   - component: {fileID: 7191948749352825089}
   - component: {fileID: 7191948749352825094}
+  - component: {fileID: -1963697621855073099}
   m_Layer: 0
   m_Name: RPG_Enemy
   m_TagString: Enmey
@@ -167,3 +168,24 @@ MonoBehaviour:
   hero: {fileID: 161045869402665667, guid: 8839b289dbcb89d4db33008798638e2d, type: 3}
   defaultSpeed: 0.5
   attackOffect: 0.5
+--- !u!114 &-1963697621855073099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191948749352825088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841ea7d9182c7854784c76b9f91976d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  damge: 0
+  critcalRate: 0
+  attackCoolDown: 0
+  lotDrop: []
+  healthBar: {fileID: 0}
+  healthBarSlider: {fileID: 0}
+  example: 0
