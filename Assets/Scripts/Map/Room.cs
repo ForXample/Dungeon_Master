@@ -23,10 +23,6 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     public void UpdateRoom(float xOffset, float yOffset)
     {
-<<<<<<< HEAD
-
-=======
->>>>>>> 74543a5 (【fixBug】修复好了因为脚本编译器不同而导致的本地设置的丢失)
         stepToStart = (int)(Mathf.Abs(transform.position.x / xOffset) + Mathf.Abs(transform.position.y / yOffset));
 
         text.text = stepToStart.ToString();

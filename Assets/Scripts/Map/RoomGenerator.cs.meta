@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: f67ed1d977d49834f851c44849ceb642
-=======
-guid: f52c5625f1a8ba54aa36c3fd8bc5e7cf
->>>>>>> 74543a5 (【fixBug】修复好了因为脚本编译器不同而导致的本地设置的丢失)
+guid: 8bdb27f29a03345438ef4fefda2d6f69
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

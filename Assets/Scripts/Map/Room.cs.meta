@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: fa523c27107da6741980d7b158b3f895
-=======
-guid: 2eb0ab45b35d3e046a0aa0f0004d2037
->>>>>>> dev_LZX_local
-=======
-guid: 2eb0ab45b35d3e046a0aa0f0004d2037
->>>>>>> 74543a5 (【fixBug】修复好了因为脚本编译器不同而导致的本地设置的丢失)
+guid: 0eed9550c3b26f64ca756569c4131440
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
