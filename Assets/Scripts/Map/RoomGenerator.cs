@@ -41,7 +41,7 @@ public class RoomGenerator : MonoBehaviour
         rooms[0].GetComponent<SpriteRenderer>().color = startColor;
 
         endRoom = rooms[0].gameObject;
-        
+
         foreach (var room in rooms)
         {
             //if (room.transform.position.sqrMagnitude > endRoom.transform.position.sqrMagnitude)
@@ -50,11 +50,11 @@ public class RoomGenerator : MonoBehaviour
             //}
             SetupRoom(room, room.transform.position);
 
-        } 
+        }
         FindEndRoom();
 
         endRoom.GetComponent<SpriteRenderer>().color = endColor;
-        
+
 
     }
 
@@ -71,21 +71,21 @@ public class RoomGenerator : MonoBehaviour
     {
         do
         {
-            direction = (Direction)Random.Range(0,4);
+            direction = (Direction)Random.Range(0, 4);
 
-            switch(direction)
+            switch (direction)
             {
                 case Direction.up:
-                    generatorPoint.position += new Vector3 (0, yOffset, 0);
+                    generatorPoint.position += new Vector3(0, yOffset, 0);
                     break;
                 case Direction.down:
-                    generatorPoint.position += new Vector3 (0, -yOffset, 0);
+                    generatorPoint.position += new Vector3(0, -yOffset, 0);
                     break;
                 case Direction.left:
-                    generatorPoint.position += new Vector3 (-xOffset, 0, 0);
+                    generatorPoint.position += new Vector3(-xOffset, 0, 0);
                     break;
                 case Direction.right:
-                    generatorPoint.position += new Vector3 (xOffset, 0, 0);
+                    generatorPoint.position += new Vector3(xOffset, 0, 0);
                     break;
             }
         } while (Physics2D.OverlapCircle(generatorPoint.position, 0.2f, roomLayer));
@@ -98,7 +98,7 @@ public class RoomGenerator : MonoBehaviour
         newRoom.roomLeft = Physics2D.OverlapCircle(roomPosition + new Vector3(-xOffset, 0, 0), 0.2f, roomLayer);
         newRoom.roomRight = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0, 0), 0.2f, roomLayer);
 
-        newRoom.UpdateRoom();
+        newRoom.UpdateRoom(xOffset, yOffset);
 
         switch (newRoom.doorNumber)
         {
@@ -115,7 +115,7 @@ public class RoomGenerator : MonoBehaviour
             case 2:
                 if (newRoom.roomLeft && newRoom.roomUp)
                     Instantiate(wallType.doubleLU, roomPosition, Quaternion.identity);
-                if (newRoom.roomLeft && newRoom.roomRight)  
+                if (newRoom.roomLeft && newRoom.roomRight)
                     Instantiate(wallType.doubleLR, roomPosition, Quaternion.identity);
                 if (newRoom.roomLeft && newRoom.roomDown)
                     Instantiate(wallType.doubleLD, roomPosition, Quaternion.identity);
@@ -140,7 +140,7 @@ public class RoomGenerator : MonoBehaviour
                 if (newRoom.roomLeft && newRoom.roomUp && newRoom.roomRight && newRoom.roomDown)
                     Instantiate(wallType.fourDoors, roomPosition, Quaternion.identity);
                 break;
-        }       
+        }
     }
 
     public void FindEndRoom()
@@ -155,9 +155,9 @@ public class RoomGenerator : MonoBehaviour
 
         foreach (var room in rooms)
         {
-            if(room.stepToStart == maxStep)
+            if (room.stepToStart == maxStep)
                 farRooms.Add(room.gameObject);
-            if(room.stepToStart == maxStep - 1)
+            if (room.stepToStart == maxStep - 1)
                 nearRooms.Add(room.gameObject);
         }
 
@@ -174,12 +174,12 @@ public class RoomGenerator : MonoBehaviour
 
         if (oneWayRooms.Count != 0)
         {
-            endRoom = oneWayRooms [Random.Range(0, oneWayRooms.Count)];
+            endRoom = oneWayRooms[Random.Range(0, oneWayRooms.Count)];
         }
 
         else
         {
-            endRoom = farRooms [Random.Range(0, farRooms.Count)];
+            endRoom = farRooms[Random.Range(0, farRooms.Count)];
         }
 
     }
@@ -190,7 +190,7 @@ public class RoomGenerator : MonoBehaviour
 public class WallType
 {
     public GameObject singleLeft, singleRight, singleUp, singleDown,
-                      doubleLU, doubleLR, doubleLD, doubleUR, doubleUD, doubleRD, 
+                      doubleLU, doubleLR, doubleLD, doubleUR, doubleUD, doubleRD,
                       trippleULR, trippleLDU, trippleDLR, trippleUDR,
                       fourDoors;
 }
