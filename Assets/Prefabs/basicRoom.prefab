@@ -549,21 +549,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 5406540319804270600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da7795a56bd873488676ce627245af6, type: 3}
+  m_Script: {fileID: 11500000, guid: fa523c27107da6741980d7b158b3f895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   doorLeft: {fileID: 1427193145}
   doorRight: {fileID: 1790622706}
   doorUp: {fileID: 6055205582531497299}
   doorDown: {fileID: 346516047}
+=======
+  doorLeft: {fileID: 0}
+  doorRight: {fileID: 0}
+  doorUp: {fileID: 0}
+  doorDown: {fileID: 0}
+>>>>>>> master
   roomLeft: 0
   roomRight: 0
   roomUp: 0
   roomDown: 0
-  text: {fileID: 8975520810748522385}
+  text: {fileID: 0}
   stepToStart: 0
   doorNumber: 0
+<<<<<<< HEAD
 --- !u!1 &6055205582531497299
+=======
+--- !u!1 &5472481179368019466
+>>>>>>> master
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
