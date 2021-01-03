@@ -56,6 +56,7 @@ public class HeroStatus : MonoBehaviour
         /* 初始化的变量*/
         animator = hero.GetComponent<Animator>();
         health = maxHealth; //TEST设定为满血
+        mp = maxMp;         //TEST设定为满mp
         UpdateHeroInfo();
     }
 
