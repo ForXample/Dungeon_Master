@@ -99,10 +99,14 @@ public class RoomGenerator : MonoBehaviour
         newRoom.roomRight = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0, 0), 0.2f, roomLayer);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         newRoom.UpdateRoom(xOffset, yOffset);
 =======
         newRoom.UpdateRoom(xOffset, yOffset);
 >>>>>>> dev_LZX_local
+=======
+        newRoom.UpdateRoom(xOffset, yOffset);
+>>>>>>> 74543a5 (【fixBug】修复好了因为脚本编译器不同而导致的本地设置的丢失)
 
         switch (newRoom.doorNumber)
         {
