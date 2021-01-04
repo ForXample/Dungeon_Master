@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Hero\EnemySwordStatus.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroStatus.cs" />
+    <Compile Include="Assets\Scripts\Map\CameraController.cs" />
     <Compile Include="Assets\Scripts\Map\Room.cs" />
     <Compile Include="Assets\Scripts\Map\RoomGenerator.cs" />
     <Compile Include="Assets\Scripts\TestOnly\PlayerController.cs" />
