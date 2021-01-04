@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Hero\HeroStatus.cs" />
     <Compile Include="Assets\Scripts\Map\Room.cs" />
     <Compile Include="Assets\Scripts\Map\RoomGenerator.cs" />
+    <Compile Include="Assets\Scripts\TestOnly\PlayerController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/123/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
