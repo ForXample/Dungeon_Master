@@ -17,4 +17,3 @@ public class EnemySwordMovement : EnemyMovement
         MoveTowardHero(attackOffect);
     }
 }
-    

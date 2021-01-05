@@ -174,9 +174,10 @@ public class HeroMovement : MonoBehaviour
             case Facing.up:
                 /* 设置collided box 变形 和 配合动画打开关闭武器攻击检测 */
                 //向上变形数据：  Routation.180(x) + offset.y.-0.1
+                //调正摄像机后第二次数据： Routation.180(x) + offset.y.-0.3
 
                 SwordUpDownCollider.transform.localRotation = Quaternion.Euler(180, 0, 0);
-                SwordUpDownCollider.transform.position += new Vector3(0, -0.1f, 0);
+                SwordUpDownCollider.transform.position += new Vector3(0, -0.3f, 0);
                 SwordUpDownCollider.SetActive(true);
 
                 return SwordUpDownCollider;
@@ -194,6 +195,7 @@ public class HeroMovement : MonoBehaviour
             case Facing.left:
                 /* 设置collided box 变形 和 配合动画打开关闭武器攻击检测 */
                 //向左变形数据：  Routation.180(y) + offset.y.0.02
+                //调正摄像机后第二次数据： Routation.180(y) + offset.y.0.02, x.0.03
 
                 SwordRightLeftCollider.transform.localRotation = Quaternion.Euler(0, 180, 0);
                 SwordRightLeftCollider.transform.position += new Vector3(0, 0.02f, 0);

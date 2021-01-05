@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1757775599
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 5072336124904547698, guid: 198926c95256e6d4b9626893b1d7afad,
     type: 3}
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1757775599
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6469311248949943281, guid: 198926c95256e6d4b9626893b1d7afad,
     type: 3}
@@ -232,7 +232,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1757775599
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 161323387288999530, guid: 198926c95256e6d4b9626893b1d7afad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 4489353342550908492}
   - component: {fileID: 3190218948888990154}
   - component: {fileID: 1242729180181951503}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,8 +359,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1757775599
-  m_SortingOrder: 0
+  m_SortingLayerID: 447155455
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &3190218948888990154
 MonoBehaviour:
@@ -412,8 +412,8 @@ GameObject:
   - component: {fileID: 8968773726182879582}
   - component: {fileID: 545345898429751078}
   - component: {fileID: 1604813266536445744}
-  - component: {fileID: -5279512627875719554}
   - component: {fileID: 6023070787919040232}
+  - component: {fileID: 276211613959579742}
   m_Layer: 8
   m_Name: basicRoom
   m_TagString: Untagged
@@ -514,32 +514,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &-5279512627875719554
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406540319804270600}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 8}
-    newSize: {x: 16, y: 8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3}
-  m_EdgeRadius: 0
 --- !u!114 &6023070787919040232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +537,32 @@ MonoBehaviour:
   text: {fileID: 8975520810748522385}
   stepToStart: 0
   doorNumber: 0
+--- !u!61 &276211613959579742
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406540319804270600}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000007987022, y: 0.020602703}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 8}
+    newSize: {x: 16, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3948634, y: 3.4265108}
+  m_EdgeRadius: 0
 --- !u!1 &6055205582531497299
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +631,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1757775599
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 5072336124904547698, guid: 198926c95256e6d4b9626893b1d7afad,
     type: 3}
@@ -2462,7 +2462,7 @@ GameObject:
   - component: {fileID: 4205545477176550300}
   - component: {fileID: 4695350085902028731}
   - component: {fileID: 8975520810748522385}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
