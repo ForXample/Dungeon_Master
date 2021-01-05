@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+
     /* 向hero的位置移动 */
 
     public void MoveTowardHero(float keepDistanceRadias)
@@ -53,7 +54,9 @@ public class EnemyMovement : MonoBehaviour
         AnimationSetter();
     }
 
+
     /* 设定动画状态机 */
+
 
     private void AnimationSetter()
     {
@@ -73,6 +76,7 @@ public class EnemyMovement : MonoBehaviour
 
     /* 得到敌人的面向位置并且发送给动画状态机 */
 
+
     private void EnemyFacingDirection()
     {
         /* 方法2 通过角度判断 */
@@ -80,11 +84,14 @@ public class EnemyMovement : MonoBehaviour
         heroAngle = Vector2.SignedAngle(offset, heroDirection.normalized);
         //Debug.Log(heroAngle);
         if (heroAngle >= 90 && heroAngle <= 180)
+
+
         {
             facingDir = Facing.left;
         }
         else if (heroAngle >= -90 && heroAngle <= 0)
         {
+
             facingDir = Facing.right;
         }
         else if (heroAngle < 90 && heroAngle > 0)
@@ -123,6 +130,7 @@ public class EnemyMovement : MonoBehaviour
                 animator.SetFloat("xDir", 0);
                 animator.SetFloat("yDir", -1);
                 break;
+
         }
     }
 }
