@@ -77,7 +77,6 @@
     <Compile Include="Assets\Reference\scripts\TestEnmeyShooting.cs" />
     <Compile Include="Assets\Reference\scripts\TestSpell.cs" />
     <Compile Include="Assets\Reference\scripts\testProjectile.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyMovement1.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnmeyUniversalStatus.cs" />
     <Compile Include="Assets\Scripts\Hero\EnemySwordStatus.cs" />
