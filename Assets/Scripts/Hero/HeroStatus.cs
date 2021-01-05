@@ -8,7 +8,8 @@ public class HeroStatus : MonoBehaviour
     public static HeroStatus heroStatus;
     public GameObject hero;
     private Animator animator;
-
+    public GameObject deathPanel;
+    public GameObject attributePanel;
     [Header("Hero基本属性")]
     public float health;
 
@@ -57,6 +58,8 @@ public class HeroStatus : MonoBehaviour
         animator = hero.GetComponent<Animator>();
         health = maxHealth; //TEST设定为满血
         mp = maxMp;         //TEST设定为满mp
+        SetHealthUI();
+        mpSlider.value = 1;
         UpdateHeroInfo();
     }
 
@@ -70,6 +73,7 @@ public class HeroStatus : MonoBehaviour
     {
         health -= damage;
         CheckDeath();
+        SetHealthUI();
         UpdateHeroInfo();
     }
 
@@ -81,9 +85,15 @@ public class HeroStatus : MonoBehaviour
     {
         health += healValue;
         CheckOverHeal();
+        SetHealthUI();
         UpdateHeroInfo();
     }
 
+    private void SetHealthUI()
+    {
+        healthSlider.value = CalculateHealthPercentage();
+        healthNum.text = Mathf.Ceil(health).ToString() + "/" + Mathf.Ceil(maxHealth).ToString();
+    }
     public void HandleDrop()
     {
     }
@@ -108,7 +118,9 @@ public class HeroStatus : MonoBehaviour
         {
             health = 0;
             Destroy(hero);
-        }
+            deathPanel.SetActive(true);
+            attributePanel.SetActive(false);
+}
     }
 
     /*--- UI 功能计算相关functions ---*/
@@ -127,5 +139,10 @@ public class HeroStatus : MonoBehaviour
         mpNum.text = "MP：  " + Mathf.Ceil(mp).ToString() + " / "
                                + Mathf.Ceil(maxMp).ToString();
         /* 等级经验相关*/
+    }
+
+    float CalculateHealthPercentage()
+    {
+        return health / maxHealth;
     }
 }
