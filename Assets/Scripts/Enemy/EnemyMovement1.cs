@@ -10,11 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public float defaultSpeed;
 
     private enum Facing { up, down, left, right };
-<<<<<<< HEAD
 
-=======
-
->>>>>>> 3d7d4b62700217d7f6c153e11ce72d6ad4ba708e
     private Facing facingDir = Facing.down;
     private Vector2 heroDirection;
     private float heroAngle;
@@ -24,11 +20,8 @@ public class EnemyMovement : MonoBehaviour
     private bool whetherHeroStop;
     private float speed;
 
-<<<<<<< HEAD
     /* 用于给子类调取start */
-=======
-    /* 用于给子类调取start */
->>>>>>> 3d7d4b62700217d7f6c153e11ce72d6ad4ba708e
+
 
     public void initStart()
     {
@@ -36,11 +29,9 @@ public class EnemyMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-<<<<<<< HEAD
+
     /* 向hero的位置移动 */
-=======
-    /* 向hero的位置移动 */
->>>>>>> 3d7d4b62700217d7f6c153e11ce72d6ad4ba708e
+
 
     public void MoveTowardHero(float keepDistanceRadias)
     {
@@ -65,11 +56,9 @@ public class EnemyMovement : MonoBehaviour
         AnimationSetter();
     }
 
-<<<<<<< HEAD
+
     /* 设定动画状态机 */
-=======
-    /* 设定动画状态机 */
->>>>>>> 3d7d4b62700217d7f6c153e11ce72d6ad4ba708e
+
 
     private void AnimationSetter()
     {
@@ -87,18 +76,14 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
     /* 得到敌人的面向位置并且发送给动画状态机 */
-=======
-    /* 得到敌人的面向位置并且发送给动画状态机 */
->>>>>>> 3d7d4b62700217d7f6c153e11ce72d6ad4ba708e
+
 
     private void EnemyFacingDirection()
     {
         /* 方法2 通过角度判断 */
         Vector2 offset = new Vector2(0.000001f, 0.000001f); //本来想用Vector.zero的，但是输出的angle只会是0，所以就只能取一个接近于0的点
         heroAngle = Vector2.SignedAngle(offset, heroDirection.normalized);
-<<<<<<< HEAD
         //Debug.Log(heroAngle);
         if (heroAngle >= 90 && heroAngle <= 180)
         {
@@ -144,53 +129,7 @@ public class EnemyMovement : MonoBehaviour
                 animator.SetFloat("xDir", 0);
                 animator.SetFloat("yDir", -1);
                 break;
-=======
-        //Debug.Log(heroAngle);
-        if (heroAngle >= 90 && heroAngle <= 180)
-        {
-            facingDir = Facing.left;
-        }
-        else if (heroAngle >= -90 && heroAngle <= 0)
-        {
-            facingDir = Facing.right;
-        }
-        else if (heroAngle < 90 && heroAngle > 0)
-        {
-            facingDir = Facing.up;
-        }
-        else if (heroAngle >= -180 && heroAngle <= -90)
-        {
-            facingDir = Facing.down;
-        }
-        else
-        {
-            Debug.LogError("wrong facing");
-        }
-        //print(facingDir);
 
-        /* 赋值给动画状态机 */
-        switch (facingDir)
-        {
-            case Facing.right:
-                animator.SetFloat("xDir", 1);
-                animator.SetFloat("yDir", 0);
-                break;
-
-            case Facing.left:
-                animator.SetFloat("xDir", -1);
-                animator.SetFloat("yDir", 0);
-                break;
-
-            case Facing.up:
-                animator.SetFloat("xDir", 0);
-                animator.SetFloat("yDir", 1);
-                break;
-
-            case Facing.down:
-                animator.SetFloat("xDir", 0);
-                animator.SetFloat("yDir", -1);
-                break;
->>>>>>> 3d7d4b62700217d7f6c153e11ce72d6ad4ba708e
         }
     }
 }
