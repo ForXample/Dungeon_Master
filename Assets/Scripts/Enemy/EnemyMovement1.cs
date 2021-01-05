@@ -22,9 +22,13 @@ public class EnemyMovement : MonoBehaviour
 
     /* 用于给子类调取start */
 
-    public void initStart()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void initStart()
+    {
         animator = GetComponent<Animator>();
     }
 
