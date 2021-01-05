@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class HeroMovement : MonoBehaviour
 {
-    [SerializeField]
+    /*---- 基础属性 ----*/
     private Rigidbody2D rb;
     private Animator animator;
     private AnimationName currentAnimation;
 
-    [SerializeField]
+    /*---- ENUM属性类 ----*/
+
+    /// <summary>
+    /// 关于hero的朝向
+    /// </summary>
     private enum Facing
     {
         up,
@@ -19,6 +23,9 @@ public class HeroMovement : MonoBehaviour
         left
     };
 
+    /// <summary>
+    /// 关于所有的animaton的名字，必须与controller上的保持一致
+    /// </summary>
     private enum AnimationName
     {
         Hero_Idle,
@@ -28,6 +35,9 @@ public class HeroMovement : MonoBehaviour
         Hero_Defend
     };
 
+    /// <summary>
+    /// 所有的除行走和站立的动作种类，更新后要更新actionTypeNum的数量
+    /// </summary>
     private enum ActionType
     {
         Attack,
@@ -35,24 +45,27 @@ public class HeroMovement : MonoBehaviour
         Defend
     };
 
+    /// <summary>
+    /// ActionType内的数量，用于建立bool数组
+    /// </summary>
     private int actionTypeNum = 3;
 
-    [SerializeField]
+    /*---- 动作布尔值相关----*/
+    private bool isAttackPress;
+    private bool isDashPress;
+    private bool isDefendPress;
+    private bool[] actionBoolArray;
+
+    /*---- 移动相关 ----*/
     private Facing facingDir = Facing.down;
     private Vector2 inputMovement;
     private float heroFacingAngle;
     private float speed;
 
-    [SerializeField]
+    /*---- 碰撞检测相关 ----*/
     private GameObject SwordUpDownCollider;
     private GameObject SwordRightLeftCollider;
     private GameObject hitbox;
-
-    [SerializeField]
-    private bool isAttackPress;
-    private bool isDashPress;
-    private bool isDefendPress;
-    private bool[] actionBoolArray;
 
     [Header("Hero的移动属性")]
     public float defaltSpeed;
@@ -140,6 +153,10 @@ public class HeroMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 作为给coroutine的子function，关于collid box的具体调整参数在这里
+    /// </summary>
+    /// <returns>返回值是一个collider，用于给DisableCollider关闭collider</returns>
     private GameObject AttackDirction()
     {
         switch (facingDir)
@@ -224,10 +241,9 @@ public class HeroMovement : MonoBehaviour
     }
 
     /// <summary>
-    ///在一定时间后打开指定collider
+    ///在一定时间后打开指定collider， 同时根据
     /// </summary>
-    /// <param name="collider">在一定时间后enable的collider</param>
-    /// <param name="actiontype">pass到关闭的condition name（string)</param>
+    /// <param name="actiontype">执行的动作类型</param>
     /// <returns></returns>
     private IEnumerator EnableCollider(ActionType actiontype)
     {
