@@ -117,11 +117,23 @@ public class HeroMovement : MonoBehaviour
     }
 
     /// <summary>
+    /// 用于更新walk等第二优先级动画
+    /// 有新的actiuon动画增加就需要再此更新返回值
+    /// </summary>
+    /// <returns>返回应用or链接</returns>
+    private bool ActionsBool()
+    {
+        return (actionBoolArray[(int)ActionType.Attack] ||
+                actionBoolArray[(int)ActionType.Defend] ||
+                actionBoolArray[(int)ActionType.Dash]);
+    }
+
+    /// <summary>
     /// 设置Hero移动动画和移动距离
     /// </summary>
     private void Walking()
     {
-        if (!actionBoolArray[(int)ActionType.Attack])
+        if (!ActionsBool())
         {
             if (inputMovement.magnitude != 0)
             {
@@ -311,6 +323,7 @@ public class HeroMovement : MonoBehaviour
         {
             //Debug.LogError("wrong facing");
         }
+        //Mapping
         animator.SetFloat("facingDir", Mathf.InverseLerp(0, 3, (float)facingDir));
     }
 }
