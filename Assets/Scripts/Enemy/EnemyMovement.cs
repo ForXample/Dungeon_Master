@@ -69,7 +69,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         rb.velocity = heroDirection.normalized * speed;
-        Debug.Log(rb.velocity);
+        //Debug.Log(rb.velocity);
     }
 
     /*---- 动画相关 ---*/
