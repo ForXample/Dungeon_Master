@@ -77,10 +77,10 @@
     <Compile Include="Assets\Reference\scripts\TestEnmeyShooting.cs" />
     <Compile Include="Assets\Reference\scripts\TestSpell.cs" />
     <Compile Include="Assets\Reference\scripts\testProjectile.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySwordMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySwordStatus.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnmeyMovement.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnmeyUniversalStatus.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyUniversalStatus.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroStatus.cs" />
     <Compile Include="Assets\Scripts\Map\CameraController.cs" />

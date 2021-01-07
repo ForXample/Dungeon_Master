@@ -135,6 +135,7 @@ public class HeroMovement : MonoBehaviour
     {
         if (!ActionsBool())
         {
+            speed = defaltSpeed;
             if (inputMovement.magnitude != 0)
             {
                 ChangeAnimationStates(AnimationName.Hero_Walk);
@@ -143,6 +144,10 @@ public class HeroMovement : MonoBehaviour
             {
                 ChangeAnimationStates(AnimationName.Hero_Idle);
             }
+        }
+        else
+        {
+            speed = 0;
         }
         // 设置位移
         rb.velocity = inputMovement.normalized * speed;
@@ -179,7 +184,6 @@ public class HeroMovement : MonoBehaviour
 
                 SwordUpDownCollider.transform.localRotation = Quaternion.identity;
                 SwordUpDownCollider.transform.position = rb.position;
-                SwordUpDownCollider.SetActive(true);
 
                 return SwordUpDownCollider;
 
@@ -190,7 +194,6 @@ public class HeroMovement : MonoBehaviour
 
                 SwordUpDownCollider.transform.localRotation = Quaternion.Euler(180, 0, 0);
                 SwordUpDownCollider.transform.position += new Vector3(0, -0.3f, 0);
-                SwordUpDownCollider.SetActive(true);
 
                 return SwordUpDownCollider;
 
@@ -200,7 +203,6 @@ public class HeroMovement : MonoBehaviour
 
                 SwordRightLeftCollider.transform.localRotation = Quaternion.identity;
                 SwordRightLeftCollider.transform.position = rb.position;
-                SwordRightLeftCollider.SetActive(true);
 
                 return SwordRightLeftCollider;
 
@@ -211,7 +213,6 @@ public class HeroMovement : MonoBehaviour
 
                 SwordRightLeftCollider.transform.localRotation = Quaternion.Euler(0, 180, 0);
                 SwordRightLeftCollider.transform.position += new Vector3(0, 0.02f, 0);
-                SwordRightLeftCollider.SetActive(true);
 
                 return SwordRightLeftCollider;
         }
@@ -266,6 +267,7 @@ public class HeroMovement : MonoBehaviour
         {
             case ActionType.Attack:
                 hitbox = AttackDirction();
+                hitbox.SetActive(true);
                 break;
         }
         StartCoroutine(DisableCollider(hitbox, actiontype));

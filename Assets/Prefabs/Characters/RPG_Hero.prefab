@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b770472f51f741ae97c9343ee0edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaltSpeed: 2
+  defaltSpeed: 4
   startTime: 0.3
   exitTime: 0.2
 --- !u!1 &2378232572551079708
